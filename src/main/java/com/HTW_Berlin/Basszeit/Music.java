@@ -4,22 +4,26 @@ import java.awt.Image;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 @Entity
 public class Music {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String title;
     private String interpret;
-    private String imageUrl; // Link zum Bild
+    private Image imageUrl; // Link zum Bild
 
     // Konstruktoren
     public Music() {
     }
 
-    public Music(String title, String interpret, String imageUrl) {
+    public Music(String title, String interpret, Image imageUrl) {
         this.title = title;
         this.interpret = interpret;
         this.imageUrl = imageUrl;
@@ -50,11 +54,11 @@ public class Music {
         this.interpret = interpret;
     }
 
-    public String getImageUrl() {
+    public Image getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public void setImageUrl(Image imageUrl) {
         this.imageUrl = imageUrl;
     }
 }
