@@ -16,17 +16,15 @@ public class Music {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private String interpret;
-    private Image imageUrl; // Link zum Bild
+    private String interpret;// Link zum Bild
 
     // Konstruktoren
     public Music() {
     }
 
-    public Music(String title, String interpret, Image imageUrl) {
+    public Music(String title, String interpret) {
         this.title = title;
         this.interpret = interpret;
-        this.imageUrl = imageUrl;
     }
 
     // Getter und Setter
@@ -52,13 +50,5 @@ public class Music {
 
     public void setInterpret(String interpret) {
         this.interpret = interpret;
-    }
-
-    public Image getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(Image imageUrl) {
-        this.imageUrl = imageUrl;
     }
 }
