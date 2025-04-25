@@ -14,7 +14,7 @@ public class BasszeitController {
 
     @GetMapping(path = "/music")
     public ResponseEntity<Music> getMusic() {
-        final Music music = new Music("Doggy", "Katja Krassavice", image);
+        final Music music = new Music("Doggy", "Katja Krassavice");
         return ResponseEntity.ok(music);
     }
 }
