@@ -6,9 +6,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class BasszeitApplicationTests {
 
-	@Test
-	void contextLoads() {
-		throw new RuntimeException("only for testing purpose");
-	}
+//	@Test
+//	void contextLoads() {
+//		throw new RuntimeException("only for testing purpose");
+//	}
 
 }
