@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MusicController {
 
-    @GetMapping(path = "/music")
+    @GetMapping(path = "/songs")
     public ResponseEntity<Music> getMusic() {
         final Music music = new Music("Doggy", "Katja Krassavice");
         return ResponseEntity.ok(music);
