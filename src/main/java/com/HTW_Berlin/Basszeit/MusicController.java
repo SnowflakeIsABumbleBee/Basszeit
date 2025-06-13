@@ -5,8 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:5176")
-@RestController
+@CrossOrigin(origins = "*")@RestController
 public class MusicController {
 
     @GetMapping(path = "/music")
