@@ -12,7 +12,7 @@ public class MusicController {
     @Autowired
     MusicService musicService;
 
-    @PostMapping
+    @PostMapping(path="/repo")
     public Music createMusic(@RequestBody Music music) {
         return musicService.save(music);
     }
