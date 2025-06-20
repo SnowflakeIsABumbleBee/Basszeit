@@ -10,20 +10,17 @@ import java.util.List;
 public class MusicController {
 
     @Autowired
-    MusicService musicService;
+    MusicService service;
 
     @PostMapping(path="/repo")
     public Music createMusic(@RequestBody Music music) {
-        return musicService.save(music);
+        return service.save(music);
     }
 
-    @GetMapping(path = "/music")
-    public ResponseEntity<List<Music>> getMusic() {
-        List<Music> musicList = List.of(
-                new Music(1L, "Doggy", "Katja Krassavice"),
-                new Music(2L, "Tomasz", "573059")
-        );
-        return ResponseEntity.ok(musicList);
+    @GetMapping("/things/{id}")
+    public Music getThing(@PathVariable String id) {
+        Long thingId = Long.parseLong(id);
+        return service.get(thingId);
     }
 
 }
