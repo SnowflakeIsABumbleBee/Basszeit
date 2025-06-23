@@ -1,6 +1,5 @@
 package com.HTW_Berlin.Basszeit;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,10 +16,14 @@ public class MusicController {
         return service.save(music);
     }
 
-    @GetMapping("/things/{id}")
+    @GetMapping("/music/{id}")
     public Music getThing(@PathVariable String id) {
         Long thingId = Long.parseLong(id);
         return service.get(thingId);
+    }
+    @GetMapping("/music")
+    public List<Music> getAllMusic() {
+        return service.getAll();
     }
 
 }
