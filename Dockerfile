@@ -1,4 +1,6 @@
 FROM gradle:jdk21-jammy AS build
+ARG DB_PASSWORD
+ENV DB_PASSWORD=$DB_PASSWORD
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN gradle build --no-daemon
